@@ -3,147 +3,764 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="RB Mobile Mechanic — mobile mechanic in Enfield, available 24 hours.">
+
 <title>RB Mobile Mechanic | Enfield</title>
 
 <style>
-:root {
-  --bg: #080a0d;
-  --card: #111419;
-  --card2: #171b21;
-  --text: #f5f7fa;
-  --muted: #aeb5c0;
-  --line: #282e36;
-  --red: #ff4b3e;
-  --red2: #ff684f;
-  --green: #32d583;
-}
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  font-family: Inter, Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #08090b;
+    color: white;
+    line-height: 1.6;
 }
 
 .container {
-  width: min(1120px, 92%);
-  margin: auto;
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
 }
 
-/* TOP BAR */
+/* NAVIGATION */
 
-.topbar {
-  background: #0d1014;
-  border-bottom: 1px solid var(--line);
-  color: var(--muted);
-  font-size: 13px;
-}
-
-.topbar .container {
-  display: flex;
-  justify-content: space-between;
-  padding: 9px 0;
-}
-
-/* NAV */
-
-header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: rgba(8,10,13,.92);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--line);
-}
-
-.nav {
-  height: 76px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+nav {
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #25282d;
 }
 
 .logo {
-  font-size: 21px;
-  font-weight: 900;
-  letter-spacing: -.8px;
+    font-size: 21px;
+    font-weight: 900;
 }
 
 .logo span {
-  color: var(--red);
+    color: #ff493d;
 }
 
-.navlinks {
-  display: flex;
-  gap: 28px;
-  color: #c7ccd4;
-  font-size: 14px;
+.nav-links {
+    display: flex;
+    gap: 25px;
 }
 
-.navlinks a:hover {
-  color: white;
+.nav-links a {
+    color: #b7bcc5;
+    text-decoration: none;
+    font-size: 14px;
 }
 
-.navbtn {
-  background: var(--red);
-  padding: 10px 16px;
-  border-radius: 9px;
-  font-weight: 800;
-  font-size: 14px;
+.nav-links a:hover {
+    color: white;
+}
+
+.call-button {
+    background: #ff493d;
+    color: white;
+    text-decoration: none;
+    padding: 11px 17px;
+    border-radius: 8px;
+    font-weight: bold;
 }
 
 /* HERO */
 
 .hero {
-  min-height: 680px;
-  display: grid;
-  grid-template-columns: 1.05fr .95fr;
-  align-items: center;
-  gap: 60px;
-  padding: 80px 0;
+    padding: 100px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
 }
 
 .badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--card);
-  border: 1px solid var(--line);
-  padding: 7px 12px;
-  border-radius: 999px;
-  color: #dce0e5;
-  font-size: 12px;
-  font-weight: 700;
-  margin-bottom: 22px;
-}
-
-.status-dot {
-  width: 7px;
-  height: 7px;
-  background: var(--green);
-  border-radius: 50%;
-  box-shadow: 0 0 0 4px rgba(50,213,131,.12);
+    display: inline-block;
+    border: 1px solid #30343a;
+    background: #121519;
+    padding: 7px 12px;
+    border-radius: 30px;
+    color: #bfc4cc;
+    font-size: 13px;
+    margin-bottom: 20px;
 }
 
 h1 {
-  font-size: clamp(48px, 7vw, 78px);
-  line-height: .96
-  
+    font-size: 65px;
+    line-height: 1;
+    letter-spacing: -3px;
+}
+
+.red {
+    color: #ff493d;
+}
+
+.hero-text {
+    color: #aeb4bd;
+    font-size: 18px;
+    margin: 25px 0;
+    max-width: 570px;
+}
+
+.buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.button {
+    display: inline-block;
+    padding: 14px 20px;
+    border-radius: 9px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.primary {
+    background: #ff493d;
+    color: white;
+}
+
+.secondary {
+    border: 1px solid #30343a;
+    color: white;
+    background: #121519;
+}
+
+/* CAR */
+
+.car-card {
+    background: #121519;
+    border: 1px solid #292d33;
+    padding: 18px;
+    border-radius: 20px;
+}
+
+.car {
+    height: 380px;
+    border-radius: 14px;
+    background: linear-gradient(145deg,#30343a,#111317);
+    position: relative;
+    overflow: hidden;
+}
+
+.car-shape {
+    position: absolute;
+    width: 75%;
+    height: 105px;
+    left: 12.5%;
+    bottom: 115px;
+    background: linear-gradient(#454b53,#15181c);
+    border-radius: 80px 80px 25px 25px;
+    border: 2px solid #555b64;
+}
+
+.car-text {
+    position: absolute;
+    bottom: 150px;
+    left: 34%;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.card-info {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 16px;
+}
+
+.stars {
+    color: #ffb83d;
+}
+
+.open {
+    color: #4dd88a;
+    font-size: 13px;
+}
+
+/* SECTIONS */
+
+section {
+    padding: 90px 0;
+    border-top: 1px solid #25282d;
+}
+
+.small-title {
+    color: #ff493d;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h2 {
+    font-size: 42px;
+    line-height: 1.1;
+    margin: 8px 0 35px;
+}
+
+/* SERVICES */
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 18px;
+}
+
+.service {
+    background: #121519;
+    border: 1px solid #292d33;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.service-number {
+    color: #ff493d;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.service h3 {
+    margin-bottom: 8px;
+}
+
+.service p {
+    color: #aeb4bd;
+    font-size: 14px;
+}
+
+/* CTA */
+
+.cta {
+    background: linear-gradient(135deg,#1b1e23,#101216);
+    border: 1px solid #292d33;
+    padding: 40px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.cta p {
+    color: #aeb4bd;
+    margin-top: 8px;
+}
+
+/* ABOUT */
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.box {
+    background: #121519;
+    border: 1px solid #292d33;
+    border-radius: 15px;
+    padding: 30px;
+}
+
+.box p {
+    color: #aeb4bd;
+    margin-top: 12px;
+}
+
+.facts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.fact {
+    background: #191d22;
+    padding: 16px;
+    border-radius: 10px;
+}
+
+.fact span {
+    color: #aeb4bd;
+    font-size: 13px;
+}
+
+/* CONTACT */
+
+.contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.contact-box {
+    background: #121519;
+    border: 1px solid #292d33;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.contact-item {
+    padding: 17px 0;
+    border-bottom: 1px solid #292d33;
+}
+
+.contact-item:last-child {
+    border-bottom: none;
+}
+
+.contact-label {
+    color: #8f969f;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact-item a {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* FOOTER */
+
+footer {
+    border-top: 1px solid #25282d;
+    padding: 30px 0;
+    color: #8f969f;
+    font-size: 13px;
+}
+
+/* MOBILE */
+
+@media(max-width:800px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 65px 0;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+
+    .services,
+    .about,
+    .contact {
+        grid-template-columns: 1fr;
+    }
+
+    .cta {
+        display: block;
+    }
+
+    .cta .button {
+        margin-top: 20px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<nav class="container">
+
+    <div class="logo">
+        RB <span>Mobile Mechanic</span>
+    </div>
+
+    <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <a class="call-button" href="tel:07359230343">
+        Call Now
+    </a>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero container">
+
+    <div>
+
+        <div class="badge">
+            ● Available 24 hours
+        </div>
+
+        <h1>
+            Mobile mechanic.
+            <br>
+            <span class="red">
+                Right where you need it.
+            </span>
+        </h1>
+
+        <p class="hero-text">
+            RB Mobile Mechanic provides mobile mechanical assistance
+            around Enfield. Get in touch directly to discuss your
+            vehicle and arrange assistance.
+        </p>
+
+        <div class="buttons">
+
+            <a class="button primary" href="tel:07359230343">
+                Call 07359 230343
+            </a>
+
+            <a class="button secondary" href="#contact">
+                Get in touch
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="car-card">
+
+        <div class="car">
+
+            <div class="car-shape"></div>
+
+            <div class="car-text">
+                RB MOBILE
+            </div>
+
+        </div>
+
+        <div class="card-info">
+
+            <div>
+                <strong>RB Mobile Mechanic</strong>
+                <br>
+                <span class="stars">★</span>
+                4.0 · 12 reviews
+            </div>
+
+            <div class="open">
+                ● Open 24 hours
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<div class="container">
+
+    <div class="small-title">
+        What we do
+    </div>
+
+    <h2>
+        Help when your car needs it.
+    </h2>
+
+
+    <div class="services">
+
+        <div class="service">
+
+            <div class="service-number">
+                01
+            </div>
+
+            <h3>
+                Mobile assistance
+            </h3>
+
+            <p>
+                Mechanical assistance brought directly
+                to a convenient location.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <div class="service-number">
+                02
+            </div>
+
+            <h3>
+                Vehicle support
+            </h3>
+
+            <p>
+                Discuss your vehicle issue and find out
+                what assistance may be available.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <div class="service-number">
+                03
+            </div>
+
+            <h3>
+                Convenient service
+            </h3>
+
+            <p>
+                A mobile-first approach designed around
+                your location and situation.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section>
+
+<div class="container">
+
+    <div class="cta">
+
+        <div>
+
+            <div class="small-title">
+                Need a mechanic?
+            </div>
+
+            <h2>
+                Let's get your vehicle sorted.
+            </h2>
+
+            <p>
+                Call RB Mobile Mechanic to discuss your
+                situation and arrange mobile assistance.
+            </p>
+
+        </div>
+
+        <a class="button primary" href="tel:07359230343">
+            Call now →
+        </a>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="container">
+
+    <div class="small-title">
+        About
+    </div>
+
+    <h2>
+        Local, direct and mobile.
+    </h2>
+
+
+    <div class="about">
+
+        <div class="box">
+
+            <h3>
+                RB Mobile Mechanic
+            </h3>
+
+            <p>
+                Based in Enfield Town, RB Mobile Mechanic
+                offers mobile mechanical assistance and
+                is available 24 hours.
+            </p>
+
+            <p>
+                Website concept created by Nexora.
+                Business service details should be confirmed
+                before publishing.
+            </p>
+
+        </div>
+
+
+        <div class="box">
+
+            <h3>
+                Business details
+            </h3>
+
+            <div class="facts">
+
+                <div class="fact">
+                    <strong>4.0 ★</strong>
+                    <br>
+                    <span>12 reviews</span>
+                </div>
+
+                <div class="fact">
+                    <strong>24 hours</strong>
+                    <br>
+                    <span>Listed availability</span>
+                </div>
+
+                <div class="fact">
+                    <strong>Enfield</strong>
+                    <br>
+                    <span>39a, Enfield EN2 6AJ</span>
+                </div>
+
+                <div class="fact">
+                    <strong>Mobile</strong>
+                    <br>
+                    <span>Service-based business</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="container">
+
+    <div class="small-title">
+        Contact
+    </div>
+
+    <h2>
+        Speak to RB directly.
+    </h2>
+
+
+    <div class="contact">
+
+        <div class="contact-box">
+
+            <div class="contact-item">
+
+                <div class="contact-label">
+                    Phone
+                </div>
+
+                <a href="tel:07359230343">
+                    07359 230343
+                </a>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <div class="contact-label">
+                    Location
+                </div>
+
+                <strong>
+                    39a, Enfield EN2 6AJ
+                </strong>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <div class="contact-label">
+                    Availability
+                </div>
+
+                <strong>
+                    Open 24 hours
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="contact-box">
+
+            <h3>
+                Ready to call?
+            </h3>
+
+            <p style="color:#aeb4bd;margin:10px 0 20px;">
+                Contact RB Mobile Mechanic directly
+                to discuss your vehicle.
+            </p>
+
+            <a class="button primary" href="tel:07359230343">
+                Call 07359 230343
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<div class="container">
+
+    © 2026 RB Mobile Mechanic ·
+    Demo website concept by Nexora
+
+</div>
+
+</footer>
+
+
 </body>
-</html>
+                  </html>
